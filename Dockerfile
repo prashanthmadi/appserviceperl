@@ -1,4 +1,4 @@
-FROM httpd/2.4.17
+FROM httpd:latest
 ADD http://www.eu.apache.org/dist/perl/mod_perl-2.0.9.tar.gz mod_perl-2.0.9.tar.gz
 RUN tar -zxvf mod_perl-2.0.9.tar.gz
 RUN apt-get update
