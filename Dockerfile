@@ -6,6 +6,8 @@ RUN apt-get -y install libapache2-mod-perl2-dev
 RUN apt-get -y install  libapache2-request-perl libdatetime-perl
 RUN rm -rf /var/www/html
 RUN rm -rf /var/log/apache2
+RUN mkdir -p /home/site/wwwroot
+RUN mkdir -p /home/LogFiles
 RUN ln -s /home/site/wwwroot /var/www/html
 RUN ln -s /home/LogFiles /var/log/apache2
 RUN cpan install CGI
