@@ -8,6 +8,8 @@ RUN rm -rf /var/www/html
 RUN rm -rf /var/log/apache2
 RUN mkdir -p /home/site/wwwroot
 RUN mkdir -p /home/LogFiles
+RUN mkdir -p /var/www
+RUN mkdir -p /var/log
 RUN ln -s /home/site/wwwroot /var/www/html
 RUN ln -s /home/LogFiles /var/log/apache2
 RUN cpan install CGI
