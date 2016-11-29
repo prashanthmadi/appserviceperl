@@ -8,5 +8,6 @@ RUN   \
    && rm -rf /usr/local/apache2/logs \
    && mkdir -p /home/site/wwwroot \
    && mkdir -p /home/LogFiles \
+   && chown -R root:www-data /home/site/wwwroot \
    && ln -s /home/site/wwwroot /usr/local/apache2/htdocs \
    && ln -s /home/LogFiles /usr/local/apache2/logs
