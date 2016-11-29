@@ -5,7 +5,7 @@ RUN   \
    rm -f /usr/local/apache2/logs/* \
    && chmod 777 /usr/local/apache2/logs \
    && rm -rf /usr/local/apache2/htdocs \
-   && rm -rf /usr/local/apache2/logs \
+  #  && rm -rf /usr/local/apache2/logs \
    && mkdir -p /home \
   #  && mkdir -p /home/LogFiles \
    && chown -R root:www-data /home \
