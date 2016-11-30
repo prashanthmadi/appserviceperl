@@ -13,6 +13,6 @@ RUN   \
   #  && ln -s /home/logs /usr/local/apache2/logs \
   #  && chmod 777 /home/logs
 
-ADD ./perlapp/ /usr/local/apache2/htdocs/
+COPY ./perlapp/index.pl /usr/local/apache2/htdocs/index.pl
 
 RUN chmod a+x -R /home/
