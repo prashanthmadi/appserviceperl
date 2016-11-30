@@ -9,7 +9,7 @@ RUN   \
    && mkdir -p /home \
    && mkdir -p /home/logs \
    && chown -R root:www-data /home \
-   && ln -s /home /usr/local/apache2/htdocs
+   && ln -s /home /usr/local/apache2/htdocs \
    && ln -s /home/logs /usr/local/apache2/logs \
    && chmod 777 /home/logs
 
