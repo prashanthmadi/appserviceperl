@@ -12,7 +12,3 @@ RUN   \
    && ln -s /home /usr/local/apache2/htdocs \
    && ln -s /home/logs /usr/local/apache2/logs \
    && chmod 777 /home/logs
-
-COPY ./perlapp/index.pl /home/
-
-RUN chmod a+x -R /home/
