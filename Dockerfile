@@ -12,3 +12,7 @@ RUN   \
    && ln -s /home /usr/local/apache2/htdocs \
    && ln -s /home/logs /usr/local/apache2/logs \
    && chmod 777 /home/logs
+
+RUN apt-get update
+RUN apt-get install -y cpanminus
+RUN cpanm --installdeps .
