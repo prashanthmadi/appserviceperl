@@ -18,6 +18,7 @@ RUN  rm -f /usr/local/apache2/logs/* \
 
 # installing perl again as cpanm fails with default installation. Could be env issue
 RUN apt-get update \
+   && apt-get install make \
    && apt-get install -y perl
 
 #creating a /home/cpan directory for temporary use
