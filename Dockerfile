@@ -12,7 +12,10 @@ RUN   \
    && ln -s /home /usr/local/apache2/htdocs \
    && ln -s /home/logs /usr/local/apache2/logs \
    && chmod 777 /home/logs \
-   && mkdir -p /home/cpan
+   && mkdir -p /home/cpan \
+   && apt-get update \
+   && apt-get install curl
+
 
 COPY ./cpanfile /home/cpan/cpanfile
 
