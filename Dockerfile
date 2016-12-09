@@ -4,8 +4,7 @@ COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf
 # establising symlinks
 # /usr/local/apache2/htdocs -> /home and
 # /usr/local/apache2/logs -> /home/logs
-RUN   \
-   rm -f /usr/local/apache2/logs/* \
+RUN  rm -f /usr/local/apache2/logs/* \
    && chmod 777 /usr/local/apache2/logs \
    && rm -rf /usr/local/apache2/htdocs \
    && rm -rf /usr/local/apache2/logs \
@@ -28,8 +27,7 @@ RUN mkdir -p /home/cpan
 COPY ./cpanfile /home/cpan/cpanfile
 
 # installing cpanm inside /home/cpan to insall modules listed in cpanfile
-RUN  \
-   && apt-get install -y curl \
+RUN apt-get install -y curl \
    && cd /home/cpan \
    && curl -LO http://xrl.us/cpanm \
    && perl cpanm --installdeps .
