@@ -14,7 +14,7 @@ RUN   \
    && chown -R root:www-data /home \
    && ln -s /home /usr/local/apache2/htdocs \
    && ln -s /home/logs /usr/local/apache2/logs \
-   && chmod 777 /home/logs \
+   && chmod 777 /home/logs
 
 
 # installing perl again as cpanm fails with default installation. Could be env issue
