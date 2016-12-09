@@ -18,7 +18,8 @@ RUN   \
 
 
 # installing perl again as cpanm fails with default installation. Could be env issue
-RUN apt-get install -y perl
+RUN apt-get update \
+   && apt-get install -y perl
 
 #creating a /home/cpan directory for temporary use
 RUN mkdir -p /home/cpan
@@ -27,7 +28,7 @@ RUN mkdir -p /home/cpan
 COPY ./cpanfile /home/cpan/cpanfile
 
 # installing cpanm inside /home/cpan to insall modules listed in cpanfile
-RUN apt-get update \
+RUN  \
    && apt-get install -y curl \
    && cd /home/cpan \
    && curl -LO http://xrl.us/cpanm \
