@@ -16,6 +16,7 @@ RUN   \
    && apt-get update \
    && apt-get install -y curl
 
+RUN whereis perl
 
 COPY ./cpanfile /home/cpan/cpanfile
 
