@@ -31,4 +31,5 @@ COPY ./cpanfile /home/cpan/cpanfile
 RUN apt-get install -y curl \
    && cd /home/cpan \
    && curl -LO http://xrl.us/cpanm \
+   && apt-get install -y libhtml-parser-perl
    && perl cpanm --force --installdeps .
