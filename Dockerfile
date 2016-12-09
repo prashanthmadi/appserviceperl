@@ -14,13 +14,14 @@ RUN   \
    && chmod 777 /home/logs \
    && mkdir -p /home/cpan \
    && apt-get update \
-   && apt-get install -y curl
+   && apt-get install -y curl \
+   && apt-get install -y perl
 
 RUN whereis perl
 
 COPY ./cpanfile /home/cpan/cpanfile
 
-ENV PATH="/usr/bin:${PATH}"
+ENV PATH="/usr/bin:/usr/share:${PATH}"
 
 RUN cd /home/cpan \
    && curl -LO http://xrl.us/cpanm \
