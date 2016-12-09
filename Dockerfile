@@ -19,6 +19,8 @@ RUN   \
 
 COPY ./cpanfile /home/cpan/cpanfile
 
+ENV PATH="/usr/bin:${PATH}"
+
 RUN cd /home/cpan \
    && curl -LO http://xrl.us/cpanm \
    && perl cpanm --installdeps .
