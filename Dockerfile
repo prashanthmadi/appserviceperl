@@ -14,7 +14,7 @@ RUN   \
    && chmod 777 /home/logs \
    && mkdir -p /home/cpan \
    && apt-get update \
-   && apt-get install curl
+   && apt-get install -y curl
 
 
 COPY ./cpanfile /home/cpan/cpanfile
