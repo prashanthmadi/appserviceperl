@@ -31,4 +31,4 @@ COPY ./cpanfile /home/cpan/cpanfile
 RUN apt-get install -y curl \
    && cd /home/cpan \
    && curl -LO http://xrl.us/cpanm \
-   && perl cpanm --installdeps .
+   && perl cpanm --force --installdeps .
