@@ -11,8 +11,11 @@ RUN   \
    && chown -R root:www-data /home \
    && ln -s /home /usr/local/apache2/htdocs \
    && ln -s /home/logs /usr/local/apache2/logs \
-   && chmod 777 /home/logs
+   && chmod 777 /home/logs \
+   && mkdir -p /home/cpan
 
-RUN apt-get update
-RUN apt-get install -y cpanminus
-RUN cpanm --installdeps .
+COPY ./cpanfile /home/cpan/cpanfile
+
+RUN cd /home/cpan \
+   && curl -LO http://xrl.us/cpanm \
+   && perl cpanm --installdeps .
