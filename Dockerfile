@@ -8,13 +8,11 @@ RUN  rm -f /usr/local/apache2/logs/* \
    && chmod 777 /usr/local/apache2/logs \
    && rm -rf /usr/local/apache2/htdocs \
    && rm -rf /usr/local/apache2/logs \
-   && mkdir -p /home \
-   && mkdir -p /home/logs \
+   && mkdir -p /home/site/wwwroot \
+   && mkdir -p /home/LogFiles \
    && chown -R root:www-data /home \
-   && ln -s /home /usr/local/apache2/htdocs \
-   && ln -s /home/logs /usr/local/apache2/logs \
-   && chmod 777 /home/logs
-
+   && ln -s /home/site/wwwroot /usr/local/apache2/htdocs \
+   && ln -s /home/LogFiles /usr/local/apache2/logs
 
 # installing perl again as cpanm fails with default installation. Could be env issue
 RUN apt-get update \
@@ -33,3 +31,6 @@ RUN apt-get install -y curl \
    && curl -LO http://xrl.us/cpanm \
    && apt-get install -y libhtml-parser-perl \
    && perl cpanm --force --installdeps .
+
+# deleting /home/cpan folder as we don't need it anymore
+RUN rm -rf /home/cpan
