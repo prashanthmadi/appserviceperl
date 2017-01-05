@@ -2,8 +2,8 @@ FROM httpd:2.4
 COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf
 
 # establising symlinks
-# /usr/local/apache2/htdocs -> /home and
-# /usr/local/apache2/logs -> /home/logs
+# /usr/local/apache2/htdocs -> /home/site/wwwroot and
+# /usr/local/apache2/logs -> /home/LogFiles
 RUN  rm -f /usr/local/apache2/logs/* \
    && chmod 777 /usr/local/apache2/logs \
    && rm -rf /usr/local/apache2/htdocs \
