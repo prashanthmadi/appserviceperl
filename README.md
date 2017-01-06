@@ -6,7 +6,7 @@ Web Apps on Linux is built using [Docker](https://www.docker.com/). So you can u
 This Blog would provide an overview of Creating and running Custom Container to run perl application in web apps on Linux. 
 
 ####Creating Custom Perl Container
-1. I would recommend to setup a local Docker dev environment for creating Custom container(makes it easy to debug). Refer my another blog [Running Docker on Azure VM](/running-docker-on-azure-vm/)
+1. I would recommend to setup a local Docker dev environment for creating Custom container(makes it easy to debug). Refer my another blog [Running Docker on Azure VM](https://prmadi.com/running-docker-on-azure-vm/)
 2. Make sure your Docker file is running as expected in development environment
 3. Deploy your Docker files into Github. Ex: [appserviceperl](https://github.com/prashanthmadi/appserviceperl)
 4. Create DockerHub account and Setup Continuous integration from Github
@@ -63,12 +63,12 @@ RUN rm -rf /home/cpan
 ####Installing Custom Container to run Perl App on Web Apps Linux
 
 * Navigate to azure portal and select "Web App On Linux" option inside Web + Mobile
-![Web App On Linux](/content/images/2017/01/portal.PNG)
+![Web App On Linux](https://prmadi.com/content/images/2017/01/portal.PNG)
 * We need to Select "Configure container" option to use Custom Container
 * Here you can use Built-in container or one from Docker Hub/Private registry
 * I have my Perl Custom Container @ Docker Hub - [prashanthmadi/appserviceperl](https://hub.docker.com/r/prashanthmadi/appserviceperl/)
 * So, I have selected Docker Hub and entered my Image name.
-![Custom Container](/content/images/2017/01/portal2.PNG)
+![Custom Container](https://prmadi.com/content/images/2017/01/portal2.PNG)
 * Finish the process by pressing Create Button
 
 ####Testing App:
@@ -80,7 +80,7 @@ print "Hello, World.";
 ```
 * Navigate to http://`<your_webapp_name>`.azurewebsites.net/ and it should show "Hello World"
 
-![Custom Container hello World](/content/images/2017/01/helloworld.PNG)
+![Custom Container hello World](https://prmadi.com/content/images/2017/01/helloworld.PNG)
 
 
 ####Extending Custom Container to install more Perl dependencies
